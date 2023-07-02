@@ -1,0 +1,4 @@
+#!/bin/bash
+
+mpv -fs yes /home/dlanaras/.config/sway/dvd.webm &
+swaylock -c 00000000 --indicator-radius 60 --clock && killall mpv

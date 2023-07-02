@@ -1,0 +1,15 @@
+#!/bin/bash
+
+domain="localhost/wayland-overlay"
+path="$HOME/.config/sway"
+
+pids=$(pgrep -f $domain)
+
+if [ -z "$pids" ]
+then
+	python "$path/main.py" "http://$domain/index.html" &
+else
+	for pid in $pids; do
+		kill $pid
+	done
+fi

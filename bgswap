@@ -1,0 +1,12 @@
+#!/bin/bash
+
+dir=$(pwd)/.config/sway/backgrounds/
+
+cd $dir
+
+# will cause problems if non image files are in this directory
+img=$(ls -at1r *.* | head -n 1)
+
+swaymsg output "*" bg $dir$img stretch
+
+touch $img
